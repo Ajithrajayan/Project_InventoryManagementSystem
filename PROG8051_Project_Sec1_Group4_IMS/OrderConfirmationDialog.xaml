@@ -1,0 +1,17 @@
+﻿<Window x:Class="PROG8051_Project_Sec1_Group4_IMS.OrderConfirmationDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="200" Width="400"
+        Title="Order created successfully"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBlock Text="Order created successfully." FontWeight="Bold" FontSize="16" />
+            <TextBlock Text="{Binding Path=OrderDetails}" Margin="0,10,0,20" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Print Order" Width="75" Margin="5" Background="#FF2CCAC1" FontFamily="Britannic Bold" Click="PrintButton_Click"/>
+                <Button Content="Close" Width="75" Margin="5" Background="#FF2CCAC1" FontFamily="Britannic Bold" Click="CancelButton_Click"/>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>

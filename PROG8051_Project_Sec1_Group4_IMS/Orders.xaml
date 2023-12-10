@@ -1,0 +1,105 @@
+﻿<Window x:Class="PROG8051_Project_Sec1_Group4_IMS.Orders"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG8051_Project_Sec1_Group4_IMS"
+        
+    mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Orders" Height="800" Width="800">
+    <Window.Resources>
+        <local:AmountConverter x:Key="AmountConverter" />
+    </Window.Resources>
+
+    <Grid  Background="#FFE1FFFE" Margin="0,0,-651,0" Height="784" VerticalAlignment="Top" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Menu>
+                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
+                <MenuItem x:Name="categories" Header=" CATEGORIES "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="customer" Header=" CUSTOMER "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="order" Header=" ORDER "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="employee" Header=" EMPLOYEE "  Click="MenuItem_Click"/>
+            </Menu>
+            <Frame x:Name="mainFrame" Grid.Row="1" />
+        </Grid>
+        <Grid Margin="0,-10,0,10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Margin="0,0,0,-10" x:Name="Label_login" Content="&#x9;&#x9;&#x9;&#x9;                                ORDERS" FontFamily="Britannic Bold" FontSize="24" FontWeight="Bold" Grid.Row="1"/>
+
+
+        </Grid>
+
+
+        <Label Content="Customer ID" HorizontalAlignment="Left" Margin="80,140,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label Content="Customer Name" HorizontalAlignment="Left" Margin="80,180,0,0" VerticalAlignment="Top" Height="26" Width="97"/>
+        <Label Content="Total Amount" HorizontalAlignment="Left" Margin="900,560,0,0" VerticalAlignment="Top" Height="26" Width="98" RenderTransformOrigin="0.755,0.444"/>
+
+
+        <TextBox  x:Name="TextBox_Customer_ID" IsReadOnly="True" HorizontalAlignment="Left" Margin="240,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" TextChanged="TextBox_Customer_ID_TextChanged" />
+        <TextBox  x:Name="TextBox_Customer_Name" IsReadOnly="True" HorizontalAlignment="Left" Margin="240,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36"/>
+        <TextBox  x:Name="TextBox_Total_Amount" IsReadOnly="True" HorizontalAlignment="Left" Margin="1000,560,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36"/>
+
+
+        <Button  x:Name="Button_Product_Add" Content="ADD PRODUCT" HorizontalAlignment="Left" Margin="400,399,0,0" VerticalAlignment="Top" Height="46" Width="160" Click="Button_ProductAdd_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24"/>
+        <DataGrid x:Name="DataGrid_ProductList" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Margin="40,312,0,0" VerticalAlignment="Top" Width="336" Height="335" SelectionChanged="DataGrid_ProductList_SelectionChanged" >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" ID " Binding="{Binding  Product_ID}" Width="30"/>
+                <DataGridTextColumn Header=" Product Name " Binding="{Binding Product_Name}" Width="*"/>
+                <DataGridTextColumn Header=" Unit Price " Binding="{Binding Unit_Price}" Width="*"/>
+                <DataGridTextColumn Header=" Stock " Binding="{Binding Product_QTY}" Width="*"/>
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <DataGrid x:Name="DataGrid_OrderData" IsReadOnly="True" AutoGenerateColumns="False"  HorizontalAlignment="Left" Margin="587,250,0,0" VerticalAlignment="Top" Width="681" Height="296" SelectionChanged="DataGrid_OrderData_SelectionChanged" >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" Product ID " Binding="{Binding PID}" Width="*" />
+                <DataGridTextColumn Header=" Product Name " Binding="{Binding PName}" Width="*"/>
+                <DataGridTextColumn Header=" QTY " Binding="{Binding PQTY}" Width="*"/>
+                <DataGridTextColumn Header=" Unit Price " Binding="{Binding Uprice}" Width="*"/>
+                <DataGridTextColumn Header=" Amount " Binding="{Binding Amout}" Width="*"/>
+
+                <!-- Add more columns as needed -->
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button  x:Name="Button_ConfirmOrder" Content="CONFIRM ORDER" HorizontalAlignment="Left" Margin="1000,600,0,0" VerticalAlignment="Top" Height="47" Width="185" Click="Button_ConfirmOrder_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24"/>
+        <Button  x:Name="Button_Order_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="1125,171,0,0" VerticalAlignment="Top" Height="47" Width="143" Click="Button_OrderDelete_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" RenderTransformOrigin="1.312,0.782"/>
+        <Button  x:Name="Button_PreviousOrders" Visibility="Hidden" Content="SHOW PREVIOUS ORDERS" HorizontalAlignment="Left" Margin="650,160,0,0" VerticalAlignment="Top" Height="47" Width="300" Click="Button_ShowPreviousOrder_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24"/>
+        <ComboBox x:Name="customerComboBox"   Height="23" Width="120" Margin="-20,80,0,600" DisplayMemberPath="CustomerName" SelectionChanged="customerComboBox_SelectionChanged_1" >
+
+        </ComboBox>
+        <ComboBox x:Name="categoryComboBox" Height="23" Width="120" Margin="0,111,950,400" DisplayMemberPath="CategoryName">
+        </ComboBox>
+
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <ProgressBar x:Name="progressBar" Width="200" Height="20" Margin="0,10,0,0" Visibility="Hidden" />
+        </StackPanel>
+    </Grid>
+</Window>

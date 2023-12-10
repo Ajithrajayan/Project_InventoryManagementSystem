@@ -1,0 +1,76 @@
+﻿<Window x:Class="PROG8051_Project_Sec1_Group4_IMS.Customers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG8051_Project_Sec1_Group4_IMS"
+        mc:Ignorable="d"
+         WindowState="Maximized"
+        Title="Inventory Management System" Height="800" Width="800">
+    <Grid  Background="#FFE1FFFE" Margin="0,0,-651,0" Height="784" VerticalAlignment="Top" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Menu>
+                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
+                <MenuItem x:Name="categories" Header=" CATEGORIES "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="customer" Header=" CUSTOMER "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="order" Header=" ORDER "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="employee" Header=" EMPLOYEE "  Click="MenuItem_Click"/>
+                
+            </Menu>
+            <Frame x:Name="mainFrame" Grid.Row="1" />
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Margin="0,45,0,-5" Grid.RowSpan="2" x:Name="Label_login" Content="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;CUSTOMERS" FontFamily="Britannic Bold" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+
+        <Label x:Name="Label_ID" Content="ID" HorizontalAlignment="Left" Margin="80,140,0,0" VerticalAlignment="Top" Height="26" Width="22"/>
+        <Label x:Name="Label_FName" Content="First Name" HorizontalAlignment="Left" Margin="80,180,0,0" VerticalAlignment="Top" Height="26" Width="97"/>
+        <Label x:Name="Label_LName" Content="Last Name" HorizontalAlignment="Left" Margin="80,220,0,0" VerticalAlignment="Top" Height="26" Width="97"/>
+        <Label x:Name="Label_Mobile" Content="Mobile" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Height="26" Width="105"/>
+        <Label x:Name="Label_Email" Content="Email" HorizontalAlignment="Left" Margin="80,300,0,0" VerticalAlignment="Top" Height="26" Width="47"/>
+
+        <TextBox  x:Name="TextBox_ID" HorizontalAlignment="Left" IsReadOnly="True" Margin="240,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
+        <TextBox  x:Name="TextBox_FName" HorizontalAlignment="Left" Margin="240,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
+        <TextBox  x:Name="TextBox_LName" HorizontalAlignment="Left" Margin="240,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
+        <TextBox  x:Name="TextBox_Mobile" HorizontalAlignment="Left" Margin="240,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
+        <TextBox  x:Name="TextBox_Email" HorizontalAlignment="Left" Margin="240,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
+
+        <Button  x:Name="Button_Customers_Add" Content="ADD" HorizontalAlignment="Left" Margin="230,392,0,0" VerticalAlignment="Top" Height="47" Width="143"  Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_Add_Click"/>
+        <DataGrid x:Name="DataGrid_CustomerDetails" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="550,132,0,0" VerticalAlignment="Top" Width="700" Height="284" SelectionChanged="DataGrid_CustomerDetails_SelectionChanged" >
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" ID " Binding="{Binding Customer_ID}" Width="15" />
+                <DataGridTextColumn Header=" First Name " Binding="{Binding Customer_Fname}" Width="*"/>
+                <DataGridTextColumn Header=" Last Name " Binding="{Binding Customer_Lname}" Width="*"/>
+                <DataGridTextColumn Header=" Contact " Binding="{Binding Customer_Contact}" Width="*"/>
+                <DataGridTextColumn Header=" Email " Binding="{Binding Customer_Email}" Width="*"/>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button  x:Name="Button_Customers_Update" Content="UPDATE" HorizontalAlignment="Left" Margin="580,450,0,0" VerticalAlignment="Top" Height="47" Width="143" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_Update_Click"/>
+        <Button  x:Name="Button_Customers_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="740,450,0,0" VerticalAlignment="Top" Height="47" Width="143" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_Delete_Click"/>
+        <Button  x:Name="Button_Customers_OrderCount" Content="ORDER COUNT" HorizontalAlignment="Left" Margin="70,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_OrderCount_Click"/>
+        <Button  x:Name="Button_Customers_TotalOrderAmount" Content="TOTAL ORDER COUNT" HorizontalAlignment="Left" Margin="550,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Customers_LastOrderDate" Content="LAST ORDER DATE" HorizontalAlignment="Left" Margin="1000,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+    </Grid>
+</Window>

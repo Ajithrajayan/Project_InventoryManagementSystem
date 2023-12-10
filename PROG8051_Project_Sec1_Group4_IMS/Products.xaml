@@ -1,0 +1,73 @@
+﻿<Window x:Class="PROG8051_Project_Sec1_Group4_IMS.Products"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG8051_Project_Sec1_Group4_IMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        Title="Inventory Management System" Height="800" Width="800">
+    <Grid  Background="#FFE1FFFE" Margin="0,0,-651,0" Height="784" VerticalAlignment="Top" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Menu>
+                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
+                <MenuItem x:Name="categories" Header=" CATEGORIES "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="customer" Header=" CUSTOMER "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="order" Header=" ORDER "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="employee" Header=" EMPLOYEE "  Click="MenuItem_Click"/>
+            </Menu>
+            <Frame x:Name="mainFrame" Grid.Row="1" />
+        </Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Label Margin="0,45,0,-5" Grid.RowSpan="2" x:Name="Label_login" Content="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;PRODCUTS" FontFamily="Britannic Bold" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+
+        <Label x:Name="Label_Category" Content="Category" HorizontalAlignment="Left" Margin="80,140,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label x:Name="Label_Name" Content="Name" HorizontalAlignment="Left" Margin="80,180,0,0" VerticalAlignment="Top" Height="26" Width="97"/>
+        <Label x:Name="Label_UnitPrice" Content="Unit Price" HorizontalAlignment="Left" Margin="80,220,0,0" VerticalAlignment="Top" Height="26" Width="80"/>
+        <Label x:Name="Label_Quantity" Content="Quantity" HorizontalAlignment="Left" Margin="80,260,0,0" VerticalAlignment="Top" Height="26" Width="110"/>
+
+        <ComboBox  x:Name="ComboBox_Category" HorizontalAlignment="Left" Margin="240,132,0,0" DisplayMemberPath="CategoryName" VerticalAlignment="Top" Width="273" Height="36" SelectionChanged="ComboBox_Category_SelectionChanged"/>
+        <TextBox  x:Name="TextBox_Name" HorizontalAlignment="Left" Margin="240,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36"/>
+        <TextBox  x:Name="TextBox_UnitPrice" HorizontalAlignment="Left" Margin="240,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36"/>
+        <TextBox  x:Name="TextBox_Quantity" HorizontalAlignment="Left" Margin="240,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36"/>
+        <TextBox  x:Name="TextBox_Search" Visibility="Hidden" HorizontalAlignment="Left" Margin="800,125,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Height="47"/>
+
+        <Button  x:Name="Button_Product_Add" Content="ADD" HorizontalAlignment="Left" Margin="240,350,0,0" VerticalAlignment="Top" Height="47" Width="143" Click="Button_ProductAdd_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <DataGrid x:Name="DataGrid_Product_Details" IsReadOnly="True" AutoGenerateColumns="False" HorizontalAlignment="Left" Margin="580,180,0,0" VerticalAlignment="Top" Width="643" Height="392" SelectionChanged="DataGrid_Product_Details_SelectionChanged">
+
+            <DataGrid.Resources>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="Turquoise"/>
+                    <Setter Property="BorderThickness" Value="0,0,1,2"/>
+                    <Setter Property="BorderBrush" Value="Black"/>
+                </Style>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
+                <DataGridTextColumn Header=" ID" Binding="{Binding Product_ID}" Width ="10"/>
+                <DataGridTextColumn Header=" Product Name" Binding="{Binding Product_Name}" Width="*"/>
+                <DataGridTextColumn Header=" Unit Price " Binding="{Binding Unit_Price}" Width="*"/>
+                <DataGridTextColumn Header=" QTY "  Binding="{Binding Product_QTY}" Width="*"/>
+                <DataGridTextColumn Header=" Category ID"  Binding="{Binding Category_ID}" Width="*"/>
+               
+            </DataGrid.Columns>
+
+        </DataGrid>
+        <Button  x:Name="Button_Product_Update" Content="UPDATE" HorizontalAlignment="Left" Margin="580,600,0,0" VerticalAlignment="Top" Height="47" Width="143" Click="Button_ProductUpdate_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Product_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="740,600,0,0" VerticalAlignment="Top" Height="47" Width="143" Click="Button_ProductDelete_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Product_Search" Visibility="Hidden" Content="SEARCH" HorizontalAlignment="Left" Margin="1080,125,0,0" VerticalAlignment="Top" Height="47" Width="143" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24"/>
+    </Grid>
+</Window>

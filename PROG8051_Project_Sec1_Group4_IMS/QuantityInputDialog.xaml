@@ -1,0 +1,19 @@
+﻿<Window x:Class="PROG8051_Project_Sec1_Group4_IMS.QuantityInputDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Enter Quantity" Height="150" Width="300"
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="59*"/>
+            <ColumnDefinition Width="91*"/>
+        
+        </Grid.ColumnDefinitions >
+        <Label Content="Quantity:" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0"/>
+        <TextBox x:Name="quantityTextBox"  VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Grid.Column="1" Width="150" Height="26" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="65,0,0,10" Grid.ColumnSpan="2">
+            <Button Content="OK" Width="75" Margin="5" Background="#FF2CCAC1" FontFamily="Britannic Bold" Click="OkButton_Click"/>
+            <Button Content="Cancel" Width="75" Margin="5" Background="#FF2CCAC1" FontFamily="Britannic Bold" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

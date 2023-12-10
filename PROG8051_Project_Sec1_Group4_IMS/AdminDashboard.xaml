@@ -1,0 +1,28 @@
+﻿<Window x:Class="PROG8051_Project_Sec1_Group4_IMS.AdminDashboard"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PROG8051_Project_Sec1_Group4_IMS"
+        mc:Ignorable="d"
+        WindowState="Maximized"
+        
+         Title="Inventory Management System" Height="800" Width="800">
+    <Grid Background="#FFE1FFFE" Margin="0,0,-450,0" Height="784" VerticalAlignment="Top" >
+        <Grid>
+            <Label Margin="0,20,0,-5" Grid.RowSpan="2" x:Name="Label_login" Content="&#x9;&#x9;&#x9;&#x9;&#x9;&#x9;ADMIN - DASHBOARD" FontFamily="Britannic Bold" FontSize="24" FontWeight="Bold"/>
+        </Grid>
+
+        <Button  x:Name="Button_Dashboard_Products" Content="PRODUCTS" HorizontalAlignment="Left" Margin="80,130,0,0" VerticalAlignment="Top" Height="200" Width="200" Click="Button_DashboardProduct_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Dashboard_Categories" Content="CATEGORIES" HorizontalAlignment="Left" Margin="520,130,0,0" VerticalAlignment="Top" Height="200" Width="200" Click="Button_DashboardCategories_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Dashboard_Customer" Content="CUSTOMER" HorizontalAlignment="Left" Margin="960,130,0,0" VerticalAlignment="Top" Height="200" Width="200" Click="Button_DashboardCustomer_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Dashboard_Orders" Content="ORDERS" HorizontalAlignment="Left" Margin="80,450,0,0" VerticalAlignment="Top" Height="200" Width="200" Click="Button_DashboardOrders_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Dashboard_Employee" Content="EMPLOYEE" HorizontalAlignment="Left" Margin="520,450,0,0" VerticalAlignment="Top" Height="200" Width="200" Click="Button_DashboardEmployee_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Dashboard_Logout" Content="LOGOUT" HorizontalAlignment="Left" Margin="960,450,0,0" VerticalAlignment="Top" Height="200" Width="200" Click="Button_DashboardLogout_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+
+
+
+
+
+    </Grid>
+</Window>
