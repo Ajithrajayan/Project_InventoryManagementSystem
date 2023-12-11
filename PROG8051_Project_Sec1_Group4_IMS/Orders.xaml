@@ -23,11 +23,11 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Menu>
-                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
+                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="categories" Header=" CATEGORIES "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
                 <MenuItem x:Name="customer" Header=" CUSTOMER "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="order" Header=" ORDER "  Click="MenuItem_Click"/>
-                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="employee" Header=" EMPLOYEE "  Click="MenuItem_Click"/>
             </Menu>
             <Frame x:Name="mainFrame" Grid.Row="1" />

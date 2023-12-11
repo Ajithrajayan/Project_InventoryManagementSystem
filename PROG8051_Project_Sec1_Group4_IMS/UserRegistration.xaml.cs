@@ -85,7 +85,7 @@ namespace PROG8051_Project_Sec1_Group4_IMS
 
                 else 
                 {
-                    MessageBox.Show("!!!!! Make sure you entered the same password and fill all fields !!!!");
+                    MessageBox.Show("!!!!! Make sure you entered data in all fields !!!!");
                 }
 
 
@@ -174,7 +174,8 @@ namespace PROG8051_Project_Sec1_Group4_IMS
             TextBox_Password.Text = string.Empty;
             TextBox_Mobile.Text = string.Empty;
             TextBox_FName.Text = string.Empty;
-            TextBox_Role.Text = string.Empty;
+            //TextBox_Role.Text = string.Empty;
+           TextBox_Role.Text = " Enter A or E ";
             TextBox_CPassword.Text = string.Empty;
 
         }
@@ -245,6 +246,14 @@ namespace PROG8051_Project_Sec1_Group4_IMS
                 }
             }
         }
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = (TextBox)sender;
+
+            // Clear the text when the TextBox gets focus
+            textBox.Text = string.Empty;
+        }
+
 
 
     }

@@ -20,11 +20,11 @@
                 <RowDefinition Height="40"/>
             </Grid.RowDefinitions>
             <Menu>
-                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
+                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="categories" Header=" CATEGORIES "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
                 <MenuItem x:Name="customer" Header=" CUSTOMER "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="order" Header=" ORDER "  Click="MenuItem_Click"/>
-                <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="employee" Header=" EMPLOYEE "  Click="MenuItem_Click"/>
             </Menu>
             <Frame x:Name="mainFrame" Grid.Row="1" />
@@ -49,7 +49,7 @@
         <TextBox  x:Name="TextBox_FName" HorizontalAlignment="Left" Margin="240,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
         <TextBox  x:Name="TextBox_Password" HorizontalAlignment="Left" Margin="240,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
         <TextBox  x:Name="TextBox_CPassword" HorizontalAlignment="Left" Margin="240,252,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
-        <TextBox  x:Name="TextBox_Role" HorizontalAlignment="Left" Margin="240,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
+        <TextBox  x:Name="TextBox_Role"  HorizontalAlignment="Left" Text="Enter A or E" Margin="240,292,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" GotFocus="TextBox_GotFocus" />
         <TextBox  x:Name="TextBox_Mobile" HorizontalAlignment="Left" Margin="240,332,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Height="36" />
 
         <Button  x:Name="Button_Employee_Add" Content="ADD" HorizontalAlignment="Left" Margin="240,432,0,0" VerticalAlignment="Top" Height="47" Width="143" Click="Button_EmployeeAdd_Click" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>

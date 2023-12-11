@@ -128,10 +128,7 @@ namespace PROG8051_Project_Sec1_Group4_IMS
             TextBox_CName.Text = string.Empty;
             TextBox_ID.Text = string.Empty;
         }
-        private void ClearCategoryGrid()
-        {
-            // DataGrid_CategoryDetails.ClearDetailsVisibilityForItem(this);
-        }
+      
 
 
         private void Button_CategoryUpdate_Click(object sender, RoutedEventArgs e)
@@ -160,7 +157,7 @@ namespace PROG8051_Project_Sec1_Group4_IMS
                         CategoryDetails();
 
                         ClearTextBox();
-                        ClearCategoryGrid();
+                       
                     }
 
 
@@ -181,15 +178,32 @@ namespace PROG8051_Project_Sec1_Group4_IMS
                 DataRowView dataRowView = (DataRowView)DataGrid_CategoryDetails.SelectedItem;
                 int ID = Convert.ToInt32(dataRowView.Row[0]);
 
-                SqlCommand command = new SqlCommand($"DELETE FROM TBL_Category where Category_ID = '" + ID + "'", connection);
+               
+                    connection.Open();
 
-                connection.Open();
-                command.ExecuteReader();
-                connection.Close();
+                    // Delete from TBL_Product
+                    using (SqlCommand command2 = new SqlCommand($"DELETE FROM TBL_Product WHERE Category_ID = @ID", connection))
+                    {
+                        command2.Parameters.AddWithValue("@ID", ID);
+                        command2.ExecuteNonQuery();
+                    }
+
+                    // Delete from TBL_Category
+                    using (SqlCommand command = new SqlCommand($"DELETE FROM TBL_Category WHERE Category_ID = @ID", connection))
+                    {
+                        command.Parameters.AddWithValue("@ID", ID);
+                        command.ExecuteNonQuery();
+                    }
+
+                    connection.Close();
+
+                DataGrid_Category_Product_List.ItemsSource=null; 
+
+
                 CategoryDetails();
-
                 ClearTextBox();
-                ClearCategoryGrid();
+                
+               
 
             }
 

@@ -19,8 +19,8 @@
             </Grid.RowDefinitions>
             <Menu>
                 <MenuItem x:Name="dashboard" Header=" DASHBOARD "  Click="MenuItem_Click"/>
-                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
                 <MenuItem x:Name="categories" Header=" CATEGORIES "  Click="MenuItem_Click"/>
+                <MenuItem x:Name="products" Header=" PRODUCTS " Click="MenuItem_Click"/>
                 <MenuItem x:Name="customer" Header=" CUSTOMER "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="order" Header=" ORDER "  Click="MenuItem_Click"/>
                 <MenuItem x:Name="employee" Header=" EMPLOYEE "  Click="MenuItem_Click"/>
@@ -69,8 +69,8 @@
         </DataGrid>
         <Button  x:Name="Button_Customers_Update" Content="UPDATE" HorizontalAlignment="Left" Margin="580,450,0,0" VerticalAlignment="Top" Height="47" Width="143" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_Update_Click"/>
         <Button  x:Name="Button_Customers_Delete" Content="DELETE" HorizontalAlignment="Left" Margin="740,450,0,0" VerticalAlignment="Top" Height="47" Width="143" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_Delete_Click"/>
-        <Button  x:Name="Button_Customers_OrderCount" Content="ORDER COUNT" HorizontalAlignment="Left" Margin="70,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2" Click="Button_Customers_OrderCount_Click"/>
-        <Button  x:Name="Button_Customers_TotalOrderAmount" Content="TOTAL ORDER COUNT" HorizontalAlignment="Left" Margin="550,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
-        <Button  x:Name="Button_Customers_LastOrderDate" Content="LAST ORDER DATE" HorizontalAlignment="Left" Margin="1000,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Customers_OrderCount" Content="ORDER COUNT" Visibility="Hidden" HorizontalAlignment="Left" Margin="70,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Customers_TotalOrderAmount" Content="TOTAL ORDER COUNT" Visibility="Hidden" HorizontalAlignment="Left" Margin="550,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
+        <Button  x:Name="Button_Customers_LastOrderDate" Content="LAST ORDER DATE" Visibility="Hidden" HorizontalAlignment="Left" Margin="1000,550,0,0" VerticalAlignment="Top" Height="100" Width="250" Background="#FF2CCAC1" FontFamily="Britannic Bold" FontWeight="Bold" FontSize="24" Grid.RowSpan="2"/>
     </Grid>
 </Window>
